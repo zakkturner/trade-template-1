@@ -1,6 +1,6 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 import Header from "@/Components/Headers/Header.vue";
 import MobileHeader from "@/Components/Headers/MobileHeader.vue";
 defineProps({
@@ -19,14 +19,20 @@ defineProps({
         required: true,
     },
 });
+
+const isOpen = ref(false);
+
+function toggleHeader() {
+    isOpen.value = !isOpen.value;
+}
 </script>
 
 <template>
     <Head title="Home" />
     <div class="relative">
-        <Header />
+        <Header :isOpen="isOpen" />
         <div class="h-screen bg-[#2869a1]">
-            <MobileHeader />
+            <MobileHeader @toggle-header="toggleHeader" />
             <div></div>
         </div>
     </div>
