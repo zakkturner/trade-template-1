@@ -1,8 +1,10 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
-import { reactive, ref } from "vue";
-import Header from "@/Components/Headers/Header.vue";
+import { reactive, ref, watch } from "vue";
+import gsap from "gsap";
+import MainHeader from "@/Components/Headers/MainHeader.vue";
 import MobileHeader from "@/Components/Headers/MobileHeader.vue";
+import Hero from "@/Components/Hero.vue";
 defineProps({
     canLogin: {
         type: Boolean,
@@ -21,20 +23,35 @@ defineProps({
 });
 
 const isOpen = ref(false);
-
+const main = ref(null);
 function toggleHeader() {
     isOpen.value = !isOpen.value;
 }
+watch(
+    () => isOpen.value,
+    (newValue, oldValue) => {
+        if (newValue) {
+            gsap.fromTo(
+                main.value,
+                {
+                    x: 0,
+                },
+                { x: 160, duration: 1.5, ease: "power3.inOut" }
+            );
+        }
+    }
+);
 </script>
 
 <template>
     <Head title="Home" />
-    <div class="relative">
-        <Header :isOpen="isOpen" />
-        <div class="h-screen bg-[#2869a1]">
-            <MobileHeader @toggle-header="toggleHeader" />
+    <div class="relative bg-[#2869a1]">
+        <main-header :isOpen="isOpen"></main-header>
+        <main ref="main" class="h-screen relative">
+            <mobile-header @toggle-header="toggleHeader"></mobile-header>
             <div></div>
-        </div>
+            <hero></hero>
+        </main>
     </div>
 </template>
 

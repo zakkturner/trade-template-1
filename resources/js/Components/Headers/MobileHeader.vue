@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[rgba(255,255,255,.2)] w-full shadow-lg">
+    <div class="bg-[rgba(255,255,255,.2)] w-full shadow-lg md:hidden">
         <div class="flex items-center px-6">
             <div class="mr-2">
                 <div @click="$emit('toggleHeader')" class="w-6">
