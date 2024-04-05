@@ -5,6 +5,7 @@ import gsap from "gsap";
 import MainHeader from "@/Components/Headers/MainHeader.vue";
 import MobileHeader from "@/Components/Headers/MobileHeader.vue";
 import Hero from "@/Components/Hero.vue";
+import Services from "@/Components/Services/Services.vue";
 defineProps({
     canLogin: {
         type: Boolean,
@@ -19,6 +20,10 @@ defineProps({
     phpVersion: {
         type: String,
         required: true,
+    },
+    services: {
+        type: Object,
+        required: false,
     },
 });
 
@@ -45,12 +50,13 @@ watch(
 
 <template>
     <Head title="Home" />
-    <div class="relative bg-[#2869a1]">
+    <div class="relative">
         <main-header :isOpen="isOpen"></main-header>
         <main ref="main" class="h-screen relative">
             <mobile-header @toggle-header="toggleHeader"></mobile-header>
             <div></div>
             <hero></hero>
+            <services :services="services"></services>
         </main>
     </div>
 </template>

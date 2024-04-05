@@ -11,10 +11,10 @@
                 <div class="mb-6">
                     <p class="text-2xl text-white">Have a Plumbing Issue?</p>
                 </div>
-                <div>
+                <div class="">
                     <a
-                        href=""
-                        class="bg-[#dd1515] text-white px-6 py-4 text-lg bolder rounded"
+                        href="#"
+                        class="bg-[#dd1515] text-white px-6 py-4 text-lg bolder rounded cursor-pointer"
                         >Request Job Estimate</a
                     >
                 </div>

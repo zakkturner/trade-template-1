@@ -1,7 +1,7 @@
 <template>
     <header
         ref="menu"
-        class="-left-44 fixed md:absolute md:w-full md:left-0 h-screen md:h-full md:p-5 bg-[#51acfb] md:bg-transparent z-999"
+        class="-left-44 fixed md:absolute md:w-full md:left-0 h-screen md:h-auto md:p-5 bg-[#51acfb] md:bg-transparent z-999"
     >
         <div
             class="text-center px-10 md:bg-[rgba(255,255,255,.2)] md:flex md:justify-between md:items-center md:p-5 md:shadow-lg md:rounded"
@@ -9,23 +9,26 @@
             <div class="md:w-10">
                 <application-logo></application-logo>
             </div>
-            <nav>
-                <ul class="md:flex">
-                    <li>
-                        <a class="text-white" href="#">Home</a>
-                    </li>
-                    <li>
-                        <a class="text-white" href="#">Plumbing</a>
-                    </li>
-                    <li>
-                        <a class="text-white" href="#">About Us</a>
-                    </li>
+            <div class="flex">
+                <nav>
+                    <ul class="md:flex">
+                        <li>
+                            <a class="text-white" href="#">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-white" href="#">Plumbing</a>
+                        </li>
+                        <li>
+                            <a class="text-white" href="#">About Us</a>
+                        </li>
 
-                    <li>
-                        <a class="text-white" href="#">Book Us</a>
-                    </li>
-                </ul>
-            </nav>
+                        <li>
+                            <a class="text-white" href="#">Book Us</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class=""></button>
+            </div>
         </div>
     </header>
 </template>
